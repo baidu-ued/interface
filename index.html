@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="font-size: 100px;">
+
+<head>
+	<meta charset="utf-8">
+	<title>toast</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport" />
+</head>
+<body>
+	<script src="index.js"></script>
+</body>
+<script>
+var def = {
+	reply : {
+		'*' : {
+			nick : '默认用户名'
+		}
+	}
+}
+var result = {
+	reply : {
+		'590810DC-A0DF021-40C33EB9-98C-82F' : {
+			// nick : ''
+		},
+		'A0DF021-590810DC-40C33EB9-98C-82D' : {
+			nick : 'undefined'
+		}
+	}
+}
+//
+// result.result.threaddict['590810DC-A0DF021-40C33EB9-98C-82F'].count = 999;
+// console.log(result);
+// console.log(rs);
+// console.log(JSON.stringify(result));
+console.log(interfaceRepair(def, result))
+</script>
+
+</html>
