@@ -1,6 +1,7 @@
 # util-interface 接口兼容工具
 
-后端接口，可能存在兼容问题，当某参数不存在时，并且我们没有在前端做兼容时，可能导致js报错，该工具完美解决了此类问题，只要你提供一套默认接口参数
+前后端处于不信任的关系， 当后端接口没有按照规定的格式进行返回时， 可能导致js报错，该工具完美解决了此类问题，只要你提供一套默认接口规范
+
 
 ## 命令
 
@@ -38,28 +39,29 @@ var def = {
     msg : '调用成功',
     data : {
         data : [{
-            name : '新浪用户'
+            name : '默认用户'
         }]
     }
 }
 result = {
     status : 0,
+	count : 10,
     data : {
         data : [{
-            name : '义薄云天黑心小王子'
+            name : 'Braised-Cakes'
         },{
             name : ''
         }]
     }
 }
 result = interfaceRepair(def, 接口result, options)
-/*
+/* 结果
 {
     "status": 1,
     "msg": "调用成功",
     "data": {
         "data": [{
-            "name": "义薄云天黑心小王子"
+            "name": "Braised-Cakes"
         }, {
             "name": "新浪用户"
         }]
@@ -69,7 +71,7 @@ result = interfaceRepair(def, 接口result, options)
 
 
 /*
-    将默认参数的key设置为*
+    将默认参数的key设置为*, 则该json下所有数据都会取到
 */
 var def = {
     reply : {
